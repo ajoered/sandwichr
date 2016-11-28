@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :sandwich_ingredients
   resources :ingredients
-  resources :sandwiches
+  resources :sandwiches do
+    post '/ingredients/add', to: 'sandwiches#add_ingredient'
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
